@@ -10,7 +10,7 @@ const element = document.getElementById("element")
 
 const CHECK = "fa-check-circle"
 const UNCHECK = "fa-circle-thin"
-const LINE_TROUGH = "lineThrough"
+const LINE_THROUGH = "lineThrough"
 
 // Variables 
 
@@ -55,8 +55,8 @@ dateElement.innerHTML = today.toLocaleDateString("en-US", options)
 function addToDo(toDo, id, done, trash){
 	if(trash){return}
 
-	const DONE = done ? CHECK :UNCHECK
-	const LINE = done ? LINE_TROUGH : ""
+	const DONE = done ? CHECK : UNCHECK
+	const LINE = done ? LINE_THROUGH : ""
 
 	const item = `
 		<li class="item">
@@ -98,7 +98,7 @@ document.addEventListener("keyup",function(even){
 function completeToDo(element){
 	element.classList.toggle(CHECK)
 	element.classList.toggle(UNCHECK)
-	element.parentNode.querySelector(".text").classList.toggle(LINE_TROUGH)
+	element.parentNode.querySelector(".text").classList.toggle(LINE_THROUGH)
 
 	LIST[element.id].done = LIST[element.id].done ? false : true
 }
